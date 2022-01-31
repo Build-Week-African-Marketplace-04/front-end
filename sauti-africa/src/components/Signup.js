@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 const Signup = () => {
 
@@ -11,9 +11,9 @@ const Signup = () => {
 		username: '',
 		password: ''
 	});
-	const [error, setError] = useState({
-		message: ''
-	})
+	// const [error, setError] = useState({
+	// 	message: ''
+	// })
 
 	// Functions
 	const handleChange = (e) => {
@@ -64,7 +64,7 @@ const Signup = () => {
 					onChange={handleChange}
 				/>
 				<button>Sign Up</button>
-				{error.message ? <p>{error.message}</p> : ''}
+				{/* {error.message ? <p>{error.message}</p> : ''} */}
 			</form>
 		</div>
 	);
