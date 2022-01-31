@@ -4,21 +4,21 @@ import Item from './Item';
 const ItemList = () => {
 
 	// State
-	const [itemList, setItemList] = useState([]);
+	const [itemList] = useState([]); // Once ready, add setItemList back in
 
 	// Functions
 	useEffect(() => {
-		axios.get('')
-			.then(res => {
-				console.log(res);
-				setItemList(res.data);
-			})
-			.catch(err => console.error(err));
+		// axios.get('')
+		// 	.then(res => {
+		// 		console.log(res);
+		// 		setItemList(res.data);
+		// 	})
+		// 	.catch(err => console.error(err));
 	}, []);
 
 	// DOM
 	return(
-		<div clasName='itemList'>
+		<div className='itemList'>
 			{itemList.map(item => <Item item={item} key={item.id}/>)}
 		</div>
 	);
