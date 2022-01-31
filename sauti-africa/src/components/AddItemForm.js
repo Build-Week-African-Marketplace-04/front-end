@@ -1,26 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import Item from './Item';
+import React from 'react';
 
-const ItemList = () => {
+const AddItemForm = () => {
 
-	// State
-	const [itemList, setItemList] = useState([]);
+	// Local State
+	const [item, setItem] = useState({
+		name: '',
+		description: '',
+		price: ''
+	});
 
 	// Functions
-	useEffect(() => {
-		axios.get('')
-			.then(res => {
-				console.log(res);
-				setItemList(res.data);
-			})
-			.catch(err => console.error(err));
-	}, []);
+	const handleChange = (e) => {
+		setItem({
+			...item,
+			[e.target.name]: e.target.value
+		});
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	}
 
 	return(
-		<div clasName='itemList'>
-			{itemList.map(item => <Item item={item} key={item.id}/>)}
+		<div>
+			<form onSubmit={handleSubmit}>
+				<input
+					type='text'
+					name='name'
+					id='name'
+					value={item.name}
+					placeholder='Name'
+					onChange={handleChange}
+				/>
+				<input
+					type='text'
+					name='price'
+					id='price'
+					value={item.price}
+					placeholder='Price'
+					onChange={handleChange}
+				/>
+				<input
+					type='text'
+					name='description'
+					id='description'
+					value={item.description}
+					placeholder='Description'
+					onChange={handleChange}
+				/>
+				<button>Add Item</button>
+			</form>
 		</div>
 	);
 }
 
-export default ItemList;
+export default AddItemForm;
