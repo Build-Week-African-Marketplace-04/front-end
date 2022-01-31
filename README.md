@@ -24,9 +24,9 @@ You will build a platform to enable these business owners to create listing for 
 Proof of concept:
 http://sautiafrica.org/
 
-**Vercel Deployed Link:** https://front-end-jade-one.vercel.app/
-**Product Vision Document:** https://docs.google.com/document/d/1BtBlXwtpIUVi1caTsDuPGgLcVhvlIBR4jWIAw2_p8h4/edit#
-**Trello Board Link:** https://trello.com/b/TCnBedsy/build-week-african-marketplace
+Vercel Deployed Link: https://front-end-jade-one.vercel.app/
+Product Vision Document: https://docs.google.com/document/d/1BtBlXwtpIUVi1caTsDuPGgLcVhvlIBR4jWIAw2_p8h4/edit#
+Trello Board Link: https://trello.com/b/TCnBedsy/build-week-african-marketplace
 
 ## *Meet the Team*
 William Buchanan - Backend Engineer --- 
