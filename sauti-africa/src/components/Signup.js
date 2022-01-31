@@ -28,6 +28,7 @@ const Signup = () => {
 		// axios.post('', user)
 		// 	.then(res => {
 		// 		console.log(res);
+		// 		localStorage.setItem('token', res.data.token);
 		// 		push('/marketplace');
 		// 	})
 		// 	.catch(err => {
