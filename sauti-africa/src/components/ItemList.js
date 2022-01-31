@@ -8,17 +8,17 @@ const ItemList = () => {
 
 	// Functions
 	useEffect(() => {
-		axios.get('')
-			.then(res => {
-				console.log(res);
-				setItemList(res.data);
-			})
-			.catch(err => console.error(err));
+		// axios.get('')
+		// 	.then(res => {
+		// 		console.log(res);
+		// 		setItemList(res.data);
+		// 	})
+		// 	.catch(err => console.error(err));
 	}, []);
 
 	// DOM
 	return(
-		<div clasName='itemList'>
+		<div className='itemList'>
 			{itemList.map(item => <Item item={item} key={item.id}/>)}
 		</div>
 	);
