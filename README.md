@@ -21,8 +21,7 @@ You will build a platform to enable these business owners to create listing for 
 
 ## 📦 **Aditional Resources**
 
-Proof of concept:
-http://sautiafrica.org/
+**Proof of concept:** http://sautiafrica.org/
 
 **Vercel Deployed Link:** https://front-end-jade-one.vercel.app/
 
