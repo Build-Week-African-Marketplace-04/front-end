@@ -31,5 +31,4 @@ William Buchanan - Backend Engineer ---
 Roxanne Weber - Backend Engineer --- 
 Jacob Jolibois - Frontend React Engineer --- 
 Cody Askew - Fontend React Engineer --- 
-Maribel Garcia - Frontend React Engineer --- 
 Lindsay Kelly - Frontend React Engineer --- 
