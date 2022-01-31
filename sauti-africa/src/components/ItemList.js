@@ -4,7 +4,7 @@ import Item from './Item';
 const ItemList = () => {
 
 	// State
-	const [itemList, setItemList] = useState([]);
+	const [itemList] = useState([]); // Once ready, add setItemList back in
 
 	// Functions
 	useEffect(() => {
