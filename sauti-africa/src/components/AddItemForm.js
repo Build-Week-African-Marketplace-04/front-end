@@ -21,6 +21,7 @@ const AddItemForm = () => {
 		e.preventDefault();
 	}
 
+	// DOM
 	return(
 		<div>
 			<form onSubmit={handleSubmit}>

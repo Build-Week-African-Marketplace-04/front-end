@@ -16,6 +16,7 @@ const Logout = () => {
 		// 	.catch(err => console.error(err));
 	}, []);
 
+	// DOM
 	return(<div></div>);
 }
 
