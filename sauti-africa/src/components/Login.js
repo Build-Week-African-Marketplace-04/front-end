@@ -64,7 +64,7 @@ const Login = () => {
 					placeholder='Password'
 					onChange={handleChange}
 				/>
-				<button>Sign Up</button>
+				<button>Log In</button>
 				{/* {error.message ? <p>{error.message}</p> : ''} */}
 			</form>
 		</div>
