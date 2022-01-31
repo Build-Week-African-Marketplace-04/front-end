@@ -16,6 +16,7 @@ const ItemList = () => {
 			.catch(err => console.error(err));
 	}, []);
 
+	// DOM
 	return(
 		<div clasName='itemList'>
 			{itemList.map(item => <Item item={item} key={item.id}/>)}
