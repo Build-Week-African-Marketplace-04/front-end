@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const Signup = () => {
 
@@ -27,9 +28,19 @@ const Signup = () => {
 		// axios.post('', user)
 		// 	.then(res => {
 		// 		console.log(res);
-		// 		push('/marketplace')
+		// 		push('/marketplace');
 		// 	})
-		// 	.catch(err => console.error(err));
+		// 	.catch(err => {
+		// 		console.error(err);
+		// 		setError({
+		// 			message: err.response.data.error
+		// 		});
+		// 	});
+		// setUser({
+		// 	...user,
+		// 	username: '',
+		// 	password: ''
+		// });
 	}
 
 	// DOM
@@ -53,6 +64,7 @@ const Signup = () => {
 					onChange={handleChange}
 				/>
 				<button>Sign Up</button>
+				{error.message ? <p>{error.message}</p> : ''}
 			</form>
 		</div>
 	);
