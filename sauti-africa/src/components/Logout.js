@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
-// import { useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Logout = () => {
 	
-	// const { push } = useHistory();
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		// axios.post('')
-		// 	.then(res => {
-		// 		console.log(res);
-		// 		localStorage.removeItem('token');
-		// 		push('/login');
-		// 	})
-		// 	.catch(err => console.error(err));
-	}, []);
+		axios.post('https://build-4.herokuapp.com/api/users/logout')
+			.then(res => {
+				localStorage.removeItem('token');
+				navigate('/login');
+			})
+			.catch(err => console.error(err));
+	});
 
 	// DOM
 	return(<div></div>);

@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
 
-	// const { push } = useHistory();
+	const navigate = useNavigate();
 
 	// Local State
 	const [user, setUser] = useState({
 		username: '',
 		password: ''
 	});
-	// const [error, setError] = useState({
-	// 	message: ''
-	// })
+	const [error, setError] = useState({
+		message: ''
+	})
 
 	// Functions
 	const handleChange = (e) => {
@@ -25,23 +25,22 @@ const Login = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// axios.post('', user)
-		// 	.then(res => {
-		// 		console.log(res);
-		// 		localStorage.setItem('token', res.data.token);
-		// 		push('/marketplace');
-		// 	})
-		// 	.catch(err => {
-		// 		console.error(err);
-		// 		setError({
-		// 			message: err.response.data.error
-		// 		});
-		// 	});
-		// setUser({
-		// 	...user,
-		// 	username: '',
-		// 	password: ''
-		// });
+		axios.post('https://build-4.herokuapp.com/api/users/login', user)
+			.then(res => {
+				localStorage.setItem('token', res.data.token);
+				navigate('/marketplace');
+			})
+			.catch(err => {
+				console.error(err);
+				setError({
+					message: err.response.data.error
+				});
+			});
+		setUser({
+			...user,
+			username: '',
+			password: ''
+		});
 	}
 
 	// DOM
@@ -65,7 +64,7 @@ const Login = () => {
 					onChange={handleChange}
 				/>
 				<button>Log In</button>
-				{/* {error.message ? <p>{error.message}</p> : ''} */}
+				{error.message ? <p>{error.message}</p> : ''}
 			</form>
 		</div>
 	);
