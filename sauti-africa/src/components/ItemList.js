@@ -1,20 +1,34 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Item from './Item';
 
-const ItemList = () => {
+const ItemList = (props) => {
+
+	// Destructure Props
+	const { selectedCategory } = props;
 
 	// State
-	const [itemList] = useState([]); // Once ready, add setItemList back in
+	const [itemList, setItemList] = useState([]);
 
 	// Functions
 	useEffect(() => {
-		// axios.get('')
-		// 	.then(res => {
-		// 		console.log(res);
-		// 		setItemList(res.data);
-		// 	})
-		// 	.catch(err => console.error(err));
+		axios.get('')
+			.then(res => {
+				console.log(res);
+				setItemList(res.data);
+			})
+			.catch(err => console.error(err));
 	}, []);
+
+	useEffect(() => {
+		axios.get('')
+			.then(res => {
+				console.log(res);
+				const filteredList = res.data.filter(item => item.categoryId === selectedCategory);
+				setItemList(filteredList);
+			})
+			.catch(err => console.error(err));
+	}, [selectedCategory]);
 
 	// DOM
 	return(

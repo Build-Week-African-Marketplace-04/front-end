@@ -3,16 +3,16 @@ import React from 'react';
 const Item = (props) => {
 
 	// Destructure Props
-	const { name, description, price } = props;
+	const { item } = props;
 
 	return(
 		<div className='item'>
 			<div className='itemHeader'>
-				<h3>{name}</h3>
-				<p>{price}</p>
+				<h3>{item.name}</h3>
+				<p>{item.price}</p>
 			</div>
 			<div className='itemBody'>
-				<p>{description}</p>
+				<p>{item.description}</p>
 			</div>
 		</div>
 	);
