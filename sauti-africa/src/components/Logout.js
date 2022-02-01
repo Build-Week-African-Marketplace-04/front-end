@@ -13,7 +13,7 @@ const Logout = () => {
 				navigate('/login');
 			})
 			.catch(err => console.error(err));
-	}, []);
+	});
 
 	// DOM
 	return(<div></div>);
