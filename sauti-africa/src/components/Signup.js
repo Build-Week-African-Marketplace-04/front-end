@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Signup = () => {
 
-	// const { push } = useHistory();
+	const navigate = useNavigate();
 
 	// Local State
 	const [user, setUser] = useState({
 		username: '',
-		password: ''
+		password: '',
+		role: ''
 	});
-	// const [error, setError] = useState({
-	// 	message: ''
-	// })
+	const [error, setError] = useState({
+		message: ''
+	})
 
 	// Functions
 	const handleChange = (e) => {
@@ -25,23 +26,23 @@ const Signup = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// axios.post('', user)
-		// 	.then(res => {
-		// 		console.log(res);
-		// 		localStorage.setItem('token', res.data.token);
-		// 		push('/marketplace');
-		// 	})
-		// 	.catch(err => {
-		// 		console.error(err);
-		// 		setError({
-		// 			message: err.response.data.error
-		// 		});
-		// 	});
-		// setUser({
-		// 	...user,
-		// 	username: '',
-		// 	password: ''
-		// });
+		axios.post('https://build-4.herokuapp.com/api/users/signup', user)
+			.then(res => {
+				localStorage.setItem('token', res.data.token);
+				navigate('/marketplace');
+			})
+			.catch(err => {
+				console.error(err);
+				setError({
+					message: err.response.data.error
+				});
+			});
+		setUser({
+			...user,
+			username: '',
+			password: '',
+			role: ''
+		});
 	}
 
 	// DOM
@@ -64,8 +65,16 @@ const Signup = () => {
 					placeholder='Password'
 					onChange={handleChange}
 				/>
+				<input
+					type='text'
+					name='role'
+					id='role'
+					value={user.role}
+					placeholder='Role'
+					onChange={handleChange}
+				/>
 				<button>Sign Up</button>
-				{/* {error.message ? <p>{error.message}</p> : ''} */}
+				{error.message ? <p>{error.message}</p> : ''}
 			</form>
 		</div>
 	);
