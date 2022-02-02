@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 // Components
 import Category from './Category';
@@ -14,7 +14,7 @@ const CategoryList = (props) => {
 
 	// Functions
 	useEffect(() => {
-		axios.get('')
+		axiosWithAuth.get('/categories')
 			.then(res => {
 				console.log(res);
 				setCategories(res.data);
