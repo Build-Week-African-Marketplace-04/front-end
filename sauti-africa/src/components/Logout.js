@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 const Logout = () => {
 	
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		axios.post('https://build-4.herokuapp.com/api/users/logout')
+		axiosWithAuth.post('/users/logout')
 			.then(res => {
 				localStorage.removeItem('token');
 				navigate('/login');

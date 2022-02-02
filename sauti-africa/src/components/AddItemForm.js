@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth';
+import { useNavigate } from 'react-router-dom';
 
 const AddItemForm = () => {
+
+	const navigate = useNavigate();
 
 	// Local State
 	const [item, setItem] = useState({
@@ -19,6 +23,12 @@ const AddItemForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		axiosWithAuth.post('/items', item)
+			.then(res => {
+				console.log(res);
+				navigate('/marketplace');
+			})
+			.catch(err => console.error(err));
 	}
 
 	// DOM

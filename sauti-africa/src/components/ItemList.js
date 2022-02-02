@@ -1,5 +1,7 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axiosWithAuth from '../utils/axiosWithAuth';
+
+// Components
 import Item from './Item';
 
 const ItemList = (props) => {
@@ -12,7 +14,7 @@ const ItemList = (props) => {
 
 	// Functions
 	useEffect(() => {
-		axios.get('')
+		axiosWithAuth.get('/items')
 			.then(res => {
 				console.log(res);
 				setItemList(res.data);
@@ -21,7 +23,7 @@ const ItemList = (props) => {
 	}, []);
 
 	useEffect(() => {
-		axios.get('')
+		axiosWithAuth.get('/items')
 			.then(res => {
 				console.log(res);
 				const filteredList = res.data.filter(item => item.categoryId === selectedCategory);
