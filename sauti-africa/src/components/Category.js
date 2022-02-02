@@ -12,8 +12,8 @@ const Category = (props) => {
 
 	// DOM
 	return(
-		<div className='category'>
-			<button onClick={handleClick}>{category.name}</button>
+		<div>
+			<button className='category' onClick={handleClick}>{category.category}</button>
 		</div>
 	);
 }
