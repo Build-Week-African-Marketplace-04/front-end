@@ -23,7 +23,7 @@ const AddItemForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		axiosWithAuth.post('/items', item)
+		axiosWithAuth().post('/items', item)
 			.then(res => {
 				console.log(res);
 				navigate('/marketplace');

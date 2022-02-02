@@ -7,7 +7,7 @@ const Logout = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		axiosWithAuth.post('/users/logout')
+		axiosWithAuth().post('/users/logout')
 			.then(res => {
 				localStorage.removeItem('token');
 				navigate('/login');

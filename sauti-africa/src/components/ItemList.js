@@ -14,7 +14,7 @@ const ItemList = (props) => {
 
 	// Functions
 	useEffect(() => {
-		axiosWithAuth.get('/items')
+		axiosWithAuth().get('/items')
 			.then(res => {
 				console.log(res);
 				setItemList(res.data);
@@ -23,7 +23,7 @@ const ItemList = (props) => {
 	}, []);
 
 	useEffect(() => {
-		axiosWithAuth.get('/items')
+		axiosWithAuth().get('/items')
 			.then(res => {
 				console.log(res);
 				const filteredList = res.data.filter(item => item.categoryId === selectedCategory);

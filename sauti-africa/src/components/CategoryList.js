@@ -14,9 +14,8 @@ const CategoryList = (props) => {
 
 	// Functions
 	useEffect(() => {
-		axiosWithAuth.get('/categories')
+		axiosWithAuth().get('/items/categories')
 			.then(res => {
-				console.log(res);
 				setCategories(res.data);
 			})
 			.catch(err => console.error(err));
