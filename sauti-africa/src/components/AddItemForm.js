@@ -8,9 +8,12 @@ const AddItemForm = () => {
 
 	// Local State
 	const [item, setItem] = useState({
-		name: '',
-		description: '',
-		price: ''
+		item_id: '',
+		item_name: '',
+		item_description: '',
+		item_price: '',
+		category_id: 2,
+		market_id: 3
 	});
 
 	// Functions
@@ -23,9 +26,8 @@ const AddItemForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		axiosWithAuth().post('/items', item)
+		axiosWithAuth().post('/items/new-item', item)
 			.then(res => {
-				console.log(res);
 				navigate('/marketplace');
 			})
 			.catch(err => console.error(err));
@@ -37,25 +39,25 @@ const AddItemForm = () => {
 			<form onSubmit={handleSubmit}>
 				<input
 					type='text'
-					name='name'
+					name='item_name'
 					id='name'
-					value={item.name}
+					value={item.item_name}
 					placeholder='Name'
 					onChange={handleChange}
 				/>
 				<input
 					type='text'
-					name='price'
+					name='item_price'
 					id='price'
-					value={item.price}
+					value={item.item_price}
 					placeholder='Price'
 					onChange={handleChange}
 				/>
 				<input
 					type='text'
-					name='description'
+					name='item_description'
 					id='description'
-					value={item.description}
+					value={item.item_description}
 					placeholder='Description'
 					onChange={handleChange}
 				/>
