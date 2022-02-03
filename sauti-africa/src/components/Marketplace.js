@@ -15,10 +15,12 @@ const Marketplace = () => {
   
 	// DOM
 	return(
+		<>
 		<div className='marketplaceWrapper'>
 			<CategoryList switchCategory={switchCategory}/>
 			<ItemList selectedCategory={selectedCategory}/>
 		</div>
+		</>
 	);
 }
 
