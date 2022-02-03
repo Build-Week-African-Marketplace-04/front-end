@@ -16,7 +16,6 @@ const ItemList = (props) => {
 	useEffect(() => {
 		axiosWithAuth().get('/items')
 			.then(res => {
-				console.log(res);
 				setItemList(res.data);
 			})
 			.catch(err => console.error(err));
@@ -35,7 +34,7 @@ const ItemList = (props) => {
 	// DOM
 	return(
 		<div className='itemList'>
-			{itemList.map(item => <Item item={item} key={item.id}/>)}
+			{itemList.map(item => <Item item={item} key={item.item_id}/>)}
 		</div>
 	);
 }

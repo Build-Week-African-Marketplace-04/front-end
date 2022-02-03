@@ -24,7 +24,7 @@ const CategoryList = (props) => {
 	// DOM
 	return(
 		<div className='categoryList'>
-			{categories.map(category => <Category category={category} switchCategory={switchCategory} key={category.id}/>)}
+			{categories.map(category => <Category category={category} switchCategory={switchCategory} key={category.category_id}/>)}
 		</div>
 	);
 }
