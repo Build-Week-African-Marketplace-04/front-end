@@ -16,7 +16,7 @@ const ItemList = (props) => {
 	useEffect(() => {
 		axiosWithAuth().get('/items')
 			.then(res => {
-				console.log(res);
+				console.log(res, 'full list');
 				setItemList(res.data);
 			})
 			.catch(err => console.error(err));
@@ -25,7 +25,7 @@ const ItemList = (props) => {
 	useEffect(() => {
 		axiosWithAuth().get('/items')
 			.then(res => {
-				console.log(res);
+				console.log(res.data, 'filtered list');
 				const filteredList = res.data.filter(item => item.categoryId === selectedCategory);
 				setItemList(filteredList);
 			})
@@ -35,7 +35,7 @@ const ItemList = (props) => {
 	// DOM
 	return(
 		<div className='itemList'>
-			{itemList.map(item => <Item item={item} key={item.id}/>)}
+			{itemList.map(item => <Item item={item} key={item.item_id}/>)}
 		</div>
 	);
 }
